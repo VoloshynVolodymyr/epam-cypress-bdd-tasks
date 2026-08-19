@@ -7,7 +7,8 @@
     "test": "cypress run",
     "test:chrome": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox",
-    "test:edge": "cypress run --browser edge"
+    "test:edge": "cypress run --browser edge",
+    "test:all-browsers": "npm run test:chrome && npm run test:firefox && npm run test:edge"
   },
   "repository": {
     "type": "git",

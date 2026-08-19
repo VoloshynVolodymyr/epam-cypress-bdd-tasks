@@ -1,3 +1,14 @@
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      fillPostcodeLookupFields(
+        countryCode: string,
+        postalCode: string,
+        houseNumber: string
+      ): Chainable<void>
+    }
+  }
+}
 // ***********************************************************
 // This example support/e2e.js is processed and
 // loaded automatically before your test files.

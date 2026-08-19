@@ -50,13 +50,7 @@ export class CheckoutPage {
   fillAddress(data: AddressData): void {
     this.postalCodeInput.should('have.value', '101')
 
-    cy.intercept('GET', '**/postcode-lookup**').as('postcodeLookup')
-
-    this.countrySelect.select(data.countryCode)
-    this.postalCodeInput.clear().type(data.postalCode)
-    this.houseNumberInput.clear().type(data.houseNumber)
-
-    cy.wait('@postcodeLookup')
+    cy.fillPostcodeLookupFields(data.countryCode, data.postalCode, data.houseNumber)
 
     this.streetInput.clear().type(data.street)
     this.cityInput.clear().type(data.city)

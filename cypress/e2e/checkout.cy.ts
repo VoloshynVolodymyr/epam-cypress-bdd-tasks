@@ -1,4 +1,10 @@
-import { productOverviewPage, cartPage, checkoutPage, registerPage } from '../../pages'
+import {
+  productOverviewPage,
+  productDetailPage,
+  cartPage,
+  checkoutPage,
+  registerPage
+} from '../../pages'
 import { headerComponent } from '../../components'
 
 describe('Checkout', () => {
@@ -29,7 +35,7 @@ describe('Checkout', () => {
     // And I have a product in my shopping cart
     productOverviewPage.visit()
     productOverviewPage.getFirstInStockProductCard().click()
-    cy.get('[data-test="add-to-cart"]').click()
+    productDetailPage.addToCart()
 
     // When I proceed to the checkout page
     headerComponent.cartLink.click()
