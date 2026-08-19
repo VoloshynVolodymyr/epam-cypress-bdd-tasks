@@ -1,0 +1,28 @@
+{
+  "name": "epam-cypress-bdd-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VoloshynVolodymyr/epam-cypress-bdd-tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/VoloshynVolodymyr/epam-cypress-bdd-tasks/issues"
+  },
+  "homepage": "https://github.com/VoloshynVolodymyr/epam-cypress-bdd-tasks#readme",
+  "devDependencies": {
+    "cypress": "^15.20.1",
+    "typescript": "^7.0.2"
+  }
+}
