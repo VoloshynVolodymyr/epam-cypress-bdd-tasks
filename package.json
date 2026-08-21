@@ -8,7 +8,11 @@
     "test:chrome": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox",
     "test:edge": "cypress run --browser edge",
-    "test:all-browsers": "npm run test:chrome && npm run test:firefox && npm run test:edge"
+    "test:all-browsers": "npm run test:chrome && npm run test:firefox && npm run test:edge",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/merged-report.json",
+    "report:generate": "marge cypress/reports/merged-report.json -f report -o cypress/reports/mochawesome",
+    "report": "npm run report:merge && npm run report:generate",
+    "test:report": "npm test && npm run report"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,9 @@
   "homepage": "https://github.com/VoloshynVolodymyr/epam-cypress-bdd-tasks#readme",
   "devDependencies": {
     "cypress": "^15.20.1",
+    "mochawesome": "^8.0.1",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2",
     "typescript": "^7.0.2"
   }
 }
