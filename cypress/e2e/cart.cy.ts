@@ -10,7 +10,7 @@ describe('Shopping Cart', () => {
     productOverviewPage.getFirstInStockProductCard().click()
 
     let productName: string
-    productDetailPage.productName.invoke('text').then((text) => {
+    productDetailPage.productName.invoke('text').then(text => {
       productName = text.trim()
     })
 
