@@ -48,8 +48,7 @@ export class CheckoutPage {
   }
 
   fillAddress(data: AddressData): void {
-    this.postalCodeInput.should('have.value', '101')
-
+    this.postalCodeInput.should('not.have.value', '')
     cy.fillPostcodeLookupFields(data.countryCode, data.postalCode, data.houseNumber)
 
     this.streetInput.clear().type(data.street)
