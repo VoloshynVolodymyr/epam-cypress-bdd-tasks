@@ -10,7 +10,7 @@ import { headerComponent } from '../../components'
 describe('Checkout', () => {
   it('Complete the checkout process successfully', () => {
     // Given I am logged into the application as a "registered" user
-    registerPage.visit()
+    cy.visitAndLog('/auth/register')
 
     const uniqueEmail = `checkout.${Date.now()}@mail.com`
     const uniquePassword = `Password${Date.now()}!`
@@ -33,7 +33,7 @@ describe('Checkout', () => {
     cy.url().should('include', '/auth/login')
 
     // And I have a product in my shopping cart
-    productOverviewPage.visit()
+    cy.visitAndLog('/')
     productOverviewPage.getFirstInStockProductCard().click()
     productDetailPage.addToCart()
 

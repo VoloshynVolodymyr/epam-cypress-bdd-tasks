@@ -11,6 +11,13 @@ export default defineConfig({
   },
   e2e: {
     baseUrl: 'https://practicesoftwaretesting.com',
-    setupNodeEvents() {}
+    setupNodeEvents(on) {
+      on('task', {
+        log(message) {
+          console.log(message)
+          return null
+        }
+      })
+    }
   }
 })

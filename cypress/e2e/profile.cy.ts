@@ -6,7 +6,7 @@ import { headerComponent } from '../../components'
 describe('User profile', () => {
   it('Update user profile information', () => {
     // Given I am logged into the application as a "registered" user
-    registerPage.visit()
+    cy.visitAndLog('/auth/register')
 
     const uniqueEmail = `John.${Date.now()}@mail.com`
     const uniquePassword = `John.${Date.now()}!`

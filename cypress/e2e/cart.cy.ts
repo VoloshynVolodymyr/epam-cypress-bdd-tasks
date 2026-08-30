@@ -6,7 +6,7 @@ import { headerComponent } from '../../components'
 describe('Shopping Cart', () => {
   it('Add a specific product to the shopping cart', () => {
     // Given I am on the product details page of a specific product
-    productOverviewPage.visit()
+    cy.visitAndLog('/')
     productOverviewPage.getFirstInStockProductCard().click()
 
     let productName: string

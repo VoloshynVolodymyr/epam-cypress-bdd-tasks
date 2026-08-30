@@ -5,7 +5,7 @@ import { languageSwitcher, headerComponent, footerComponent } from '../../compon
 describe('Localization', () => {
   it('Change application interface language', () => {
     // Given I am logged into the application as an "anonymous" user
-    cy.visit('/')
+    cy.visitAndLog('/')
 
     // When I open the language selection dropdown
     // And I select the "German" language option
